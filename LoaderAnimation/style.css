@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0c192c;
+}
+
+.music-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.loader-line {
+    width: 12px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: white;
+    animation: loaderanimation 1.5s ease-in-out infinite;
+}
+
+@keyframes loaderanimation {
+    0% {
+        height: 4px;
+    }
+    50% {
+        height: 90px;
+    }
+    100% {
+        height: 4px;
+    }
+}
+
+.loader-line:nth-child(1) {
+    background-color: #d715d7;
+    animation-delay: 1s;
+}
+
+.loader-line:nth-child(2) {
+    background-color: #d71515;
+    animation-delay: 0.8s;
+}
+
+.loader-line:nth-child(3) {
+    background-color: #d71579;
+    animation-delay: 0.6s;
+}
+
+.loader-line:nth-child(4) {
+    background-color: #d76715;
+    animation-delay: 0.4s;
+}
+
+.loader-line:nth-child(5) {
+    background-color: #d7c415;
+    animation-delay: 0.2s;
+}
+
+.loader-line:nth-child(6) {
+    background-color: #d7c415;
+    animation-delay: 0.2s;
+}
+
+.loader-line:nth-child(7) {
+    background-color: #d76715;
+    animation-delay: 0.4s;
+}
+
+.loader-line:nth-child(8) {
+    background-color: #d71579;
+    animation-delay: 0.6s;
+}
+
+.loader-line:nth-child(9) {
+    background-color: #d71515;
+    animation-delay: 0.8s;
+}
+
+.loader-line:nth-child(10) {
+    background-color: #d715d7;
+    animation-delay: 1s;
+}
+
+.circle-loader-body {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    margin-bottom: 300px;
+}
+
+.circle-loader {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-top: 5px solid #03fcfc;
+    border-radius: 100%;
+    animation: 2s spin linear infinite;
+}
+
+.circle-loader::before {
+    position: absolute;
+    content: "";
+    height: inherit;
+    width: inherit;
+    border-bottom: 5px solid #f303fc;
+    border-radius: 100%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
