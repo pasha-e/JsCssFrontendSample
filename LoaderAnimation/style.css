@@ -256,6 +256,7 @@ body {
     height: 15px;
     background: #93ff2d;
     box-shadow: 0 0 0 5px #93ff2d33, 0 0 0 10px #93ff2d22, 0 0 0 15px #93ff2d11, 0 0 20px #93ff2d, 0 0 50px #93ff2d;
+    /*box-shadow: 0 0 10px #93ff2d, 0 0 50px #93ff2d;*/
 }
 
 .ring-loader .ring:nth-child(3) {
