@@ -93,12 +93,14 @@ body {
     animation-delay: 1s;
 }
 
+
+/*-----------------------------------------------*/
+
 .circle-loader-body {
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     width: 100%;
     margin-bottom: 300px;
 }
@@ -117,7 +119,7 @@ body {
     content: "";
     height: inherit;
     width: inherit;
-    border-bottom: 5px solid #f303fc;
+    border-bottom: 3px solid #f303fc;
     border-radius: 100%;
 }
 
@@ -135,6 +137,7 @@ body {
 
 .round-loader {
     position: fixed;
+    display: flex;
     height: 50px;
     width: 50px;
     margin-top: 300px;
@@ -189,7 +192,7 @@ body {
 /*------------------------------*/
 
 .ring-loader {
-    position: relative;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -288,4 +291,67 @@ body {
     font-family: consolas;
     bottom: -120px;
     letter-spacing: 0.15em;
+}
+
+
+/*------------------------------*/
+
+.circles-loader-body2 {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 700px;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle:nth-child(1) {
+    height: 250px;
+    width: 250px;
+    border-left: 5px solid #24ecff;
+    animation: rightrotate 4s linear infinite;
+}
+
+.circle:nth-child(2) {
+    height: 200px;
+    width: 200px;
+    border-right: 4px solid #93ff2d;
+    animation: leftrotate 3s linear infinite;
+}
+
+.circle:nth-child(3) {
+    height: 150px;
+    width: 150px;
+    border-top: 3px solid #ff006e;
+    animation: rightrotate 2s linear infinite;
+}
+
+.circle:nth-child(4) {
+    height: 100px;
+    width: 100px;
+    border-bottom: 2px solid #ffd960;
+    animation: leftrotate 2s linear infinite;
+}
+
+@keyframes rightrotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes leftrotate {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
