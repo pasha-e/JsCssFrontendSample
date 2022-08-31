@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr: #0c192c;
+}
+
+body {
+    background: var(--clr);
+    overflow: hidden;
+    min-height: 100vh;
+    cursor: none;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.row {
+    display: inline-flex;
+    margin-top: -48px;
+    margin-left: -82px;
+}
+
+.hexagon {
+    position: relative;
+    width: 165px;
+    height: 182px;
+    margin: 2px;
+    transition: 2s;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(90deg, rgba(18, 17, 19, 1) 50%, rgba(0, 0, 0, 1) 50%);
+}
+
+.hexagon:hover {
+    transition: 0s;
+}
+
+.row:nth-child(even) {
+    margin-left: 2px;
+}
+
+.curser {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    animation: hoveranimation 2s linear infinite;
+    visibility: hidden;
+    transition: .1s;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes hoveranimation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+body:hover .curser {
+    background: radial-gradient(circle, rgba(0, 255, 0, 1) 23%, rgba(0, 0, 0, .1) 100%);
+    visibility: visible;
+}
