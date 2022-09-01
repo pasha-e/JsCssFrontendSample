@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr: #0c192c;
+}
+
+body {
+    background: var(--clr);
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    animation: hoveranimation 2s linear infinite;
+}
+
+.row {
+    display: inline-flex;
+    margin-top: -48px;
+    margin-left: -82px;
+}
+
+.hexagon {
+    position: relative;
+    width: 165px;
+    height: 182px;
+    margin: 2px;
+    transition: 1s;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: #131111;
+}
+
+.hexagon::before {
+    content: "";
+    display: block;
+    position: relative;
+    transition: 1s;
+    top: 5px;
+    left: 5px;
+    width: 155px;
+    height: 172px;
+    background: linear-gradient(90deg, #131111 50%, #0e0d0d 50%);
+    clip-path: inherit;
+}
+
+.hexagon:hover {
+    position: relative;
+    width: 165px;
+    height: 182px;
+    margin: 2px;
+    transition: 0s;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: #0f0;
+}
+
+.hexagon:hover::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    width: 155px;
+    height: 172px;
+    background: linear-gradient(90deg, #131111 50%, #0e0d0d 50%);
+    clip-path: inherit;
+    transition: 0s;
+}
+
+.row:nth-child(even) {
+    margin-left: 2px;
+}
+
+@keyframes hoveranimation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
