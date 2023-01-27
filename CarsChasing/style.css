@@ -30,9 +30,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform-style: preserve-3d;
+    transform-style: preserve-3d;    
     transform: rotate(-15deg);
 }
+/*
 .road::before
 {
     content: '';
@@ -41,8 +42,11 @@ body {
     height: 4px;
     background: linear-gradient(90deg, #fff, #fff 50%, transparent 50%, transparent 100%);
     background-size: 50px;
-    animation: animate_road 0.125s linear infinite;
-}
+    animation: animate_road 0.125s linear infinite;    
+
+    box-shadow: 0 180px #fff, 0 -180px #fff;
+}*/
+
 @keyframes animate_road
 {
     0%
@@ -51,9 +55,33 @@ body {
     }
     100%
     {
-        background-position: 0px 0;
+        background-position: 0px 0;        
     }
 
+}
+
+.road_stroke_line
+{
+    content: '';
+    position: absolute;    
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #fff, #fff 50%, transparent 50%, transparent 100%);
+    background-size: 50px;
+    animation: animate_road 0.125s linear infinite;    
+
+    /*box-shadow: 0 180px #fff, 0 -180px #fff;*/
+}
+
+.road_stroke_line:nth-child(2)
+{    
+    top: -150px;       
+}
+
+.road_stroke_line:nth-child(3)
+{    
+    top: 150px;       
+    box-shadow: 0 10px #fff, 0 -310px #fff;
 }
 
 .police_car
@@ -71,8 +99,8 @@ body {
     animation: animate_police_car 5s linear infinite;
 }
 
-.police_car:nth-child(2)
-{
+.police_car:nth-child(4)
+{    
     left: 350px;
     animation-delay: -2.5s;
 }
